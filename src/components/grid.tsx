@@ -38,11 +38,12 @@ const FormRow = (props: {rowOfLeagues: LeagueData[], rowNumber: number}) => {
           backgroundColor: palette[randomNumber],
           padding: theme.spacing(1),
           textAlign: 'center',
+          disableElevation: true,
         }));
 
         return (
           <Grid item xs={4}>
-            <Item className="league-item">
+            <Item className="league-item" >
               <Link to={"/" +league.id[0] + league.id[1] + league.id[2] + "/2022"}>
                 <img className="league-logo" src={league.logos.light} alt={league.name} />
               </Link>
