@@ -1,6 +1,6 @@
 # MAÇKOLİK
 
-![MACKOLIK](/src/assets/home-background.png) 
+![MACKOLIK](logo.png) 
 
 ## Available Scripts
 
