@@ -1,4 +1,4 @@
-type LeagueData = {
+type League = {
   id: string,
   name: string,
   slug: string,
@@ -9,4 +9,4 @@ type LeagueData = {
   }
 }
 
-export type {LeagueData};
+export type {League};

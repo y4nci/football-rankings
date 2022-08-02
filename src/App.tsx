@@ -3,10 +3,10 @@ import Navbar from "./components/Navbar";
 import {store} from "./store";
 import {Provider} from "react-redux";
 import Home from "./pages/Home";
-import {LeagueData} from "./types/leagueData";
+import {League} from "./types/league";
 import StandingsPage from "./pages/standingsPage";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import useFetchRoutes from "./components/common/useFetchRoutes";
+import {useFetchRoutes} from "./components/common/api";
 import {NestedGrid} from "./components/grid";
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
               <div className="content">
                 <Switch>
                   <Route exact path="/" component={Home} />
-                  {leagues.data.map((league: LeagueData) => (
+                  {leagues.data.map((league: League) => (
                     <Route path={`/${league.id[0] + league.id[1] + league.id[2]}/:id`}>
                       <StandingsPage leagueName={league.id[0] + league.id[1] + league.id[2]}/>
                     </Route>)
