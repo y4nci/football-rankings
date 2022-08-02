@@ -1,0 +1,21 @@
+{"team":
+  {"id":"2429","uid":"s:600~t:2429","location":"Ankaragucu","name":"Ankaragucu","abbreviation":"ANK","displayName":"Ankaragucu","shortDisplayName":"Ankaragucu","isActive":true,
+    "logos":[{"href":"https://a.espncdn.com/i/teamlogos/soccer/500/2429.png","width":500,"height":500,"alt":"","rel":["full","default"],"lastUpdated":"2018-09-21T18:20Z"}]
+  },
+  "note":{"color":"#FF7F84","description":"Relegated","rank":19},
+  "stats":[
+    {"name":"wins","displayName":"Wins","shortDisplayName":"W","description":"Team's current Win-Loss record","abbreviation":"W","type":"wins","value":10,"displayValue":"10"},
+    {"name":"losses","displayName":"Losses","shortDisplayName":"L","description":"Losses","abbreviation":"L","type":"losses","value":22,"displayValue":"22"},
+    {"name":"ties","displayName":"Draws","shortDisplayName":"D","description":"Draws","abbreviation":"D","type":"ties","value":8,"displayValue":"8"},
+    {"name":"gamesPlayed","displayName":"Games Played","shortDisplayName":"GP","description":"Games Played","abbreviation":"GP","type":"gamesplayed","value":40,"displayValue":"40"},
+    {"name":"pointsFor","displayName":"Goals For","shortDisplayName":"F","description":"Goals For","abbreviation":"F","type":"pointsfor","value":46,"displayValue":"46"},
+    {"name":"pointsAgainst","displayName":"Goals Against","shortDisplayName":"A","description":"Goals Against","abbreviation":"A","type":"pointsagainst","value":65,"displayValue":"65"},
+    {"name":"points","displayName":"Points","shortDisplayName":"P","description":"Points","abbreviation":"P","type":"points","value":38,"displayValue":"38"},
+    {"name":"rankChange","displayName":"Rank Change","shortDisplayName":"Rank Change","description":"Rank Change","abbreviation":"RC","type":"rankchange","value":0,"displayValue":"0"},
+    {"name":"rank","displayName":"Rank","shortDisplayName":"Rank","description":"Rank","abbreviation":"R","type":"rank","value":19,"displayValue":"19"},
+    {"name":"pointDifferential","displayName":"Goal Difference","shortDisplayName":"GD","description":"Goal Difference","abbreviation":"GD","type":"pointdifferential","value":-19,"displayValue":"-19"},
+    {"name":"deductions","displayName":"Point Deductions","shortDisplayName":"Deductions","description":"Point Deductions","abbreviation":"PD","type":"deductions","value":0,"displayValue":""},
+    {"name":"ppg","displayName":"Points Per Game","shortDisplayName":"PPG","description":"Points Per Game","abbreviation":"PPG","type":"ppg","value":0,"displayValue":"0"},
+    {"id":"0","name":"All Splits","abbreviation":"Total","displayName":"Overall","shortDisplayName":"OVER","description":"Overall Record","type":"total","summary":"10-8-22","displayValue":"10-8-22"}
+  ]
+}
