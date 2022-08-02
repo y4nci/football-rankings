@@ -3,16 +3,16 @@ import {styled} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import {LeagueData} from "../types/leagueData";
+import {League} from "../types/league";
 import {Link} from 'react-router-dom';
 
 const random0to5 = (n1: number, n2: number) => {
   return Math.floor(Math.random() * 5);
 }
 
-const divideIntoRows = (leagues: LeagueData[]) => {
-  let rows: LeagueData[][] = [];
-  let row: LeagueData[] = [];
+const divideIntoRows = (leagues: League[]) => {
+  let rows: League[][] = [];
+  let row: League[] = [];
   for (let i = 0; i < leagues.length; i++) {
     row.push(leagues[i]);
     if (i % 3 === 2) {
@@ -24,13 +24,13 @@ const divideIntoRows = (leagues: LeagueData[]) => {
   return rows;
 }
 
-const FormRow = (props: {rowOfLeagues: LeagueData[], rowNumber: number}) => {
+const FormRow = (props: {rowOfLeagues: League[], rowNumber: number}) => {
   let rowOfLeagues = props.rowOfLeagues;
   let rowNumber = props.rowNumber;
 
   return (
     <React.Fragment>
-      {rowOfLeagues.map((league: LeagueData, index) => {
+      {rowOfLeagues.map((league: League, index) => {
         const palette=["#efddcd", "#ff5f65", "#0cc2bc", "#e28d00", "#c2e12e"];
         const randomNumber = random0to5(rowNumber, index);
 
@@ -55,13 +55,13 @@ const FormRow = (props: {rowOfLeagues: LeagueData[], rowNumber: number}) => {
   );
 }
 
-const NestedGrid = (leagues: LeagueData[]) => {
+const NestedGrid = (leagues: League[]) => {
   let rows = divideIntoRows(leagues);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid className="grid" container spacing={1}>
-        {rows.map((row: LeagueData[], index) => (
+        {rows.map((row: League[], index) => (
           <Grid container item spacing={{ xs: 2, md: 3 }}>
             <FormRow rowOfLeagues={row} rowNumber={index}/>
           </Grid>)
