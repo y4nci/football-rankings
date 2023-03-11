@@ -26,7 +26,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.body}`]: {
         fontSize: 14,
         fontFamily: 'Saira',
-    //backgroundColor: useColour(tableCellClasses.body.);
+        //backgroundColor: useColour(tableCellClasses.body.);
     },
 }));
 
@@ -71,14 +71,14 @@ const CustomizedTables = (rows: Team[]) => {
                                     {index + 1}
                                 </StyledTableCellTeam>
                                 <StyledTableCellTeam align="left" >{row.team.name}</StyledTableCellTeam>
-                                <StyledTableCellTeam align="right">{row.stats[3].value}</StyledTableCellTeam>
                                 <StyledTableCellTeam align="right">{row.stats[0].value}</StyledTableCellTeam>
-                                <StyledTableCellTeam align="right">{row.stats[2].value}</StyledTableCellTeam>
+                                <StyledTableCellTeam align="right">{row.stats[6].value}</StyledTableCellTeam>
+                                <StyledTableCellTeam align="right">{row.stats[5].value}</StyledTableCellTeam>
                                 <StyledTableCellTeam align="right">{row.stats[1].value}</StyledTableCellTeam>
                                 <StyledTableCellTeam align="right">{row.stats[4].value}</StyledTableCellTeam>
-                                <StyledTableCellTeam align="right">{row.stats[5].value}</StyledTableCellTeam>
-                                <StyledTableCellTeam align="right">{row.stats[9].value}</StyledTableCellTeam>
-                                <StyledTableCellTeam align="right">{row.stats[6].value}</StyledTableCellTeam>
+                                <StyledTableCellTeam align="right">{row.stats[3].value}</StyledTableCellTeam>
+                                <StyledTableCellTeam align="right">{row.stats[8].value}</StyledTableCellTeam>
+                                <StyledTableCellTeam align="right">{row.stats[2].value}</StyledTableCellTeam>
                             </StyledTableRow>
                         );
                     })}

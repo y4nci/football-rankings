@@ -4,14 +4,13 @@ import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-
-const random0to5 = () => {
-    return Math.floor(Math.random() * 5);
-};
+import { PALETTE } from "../../utils/constants";
+import { random0to5 } from "../../utils/math";
 
 const divideIntoRows = (leagues: League[]) => {
     let rows: League[][] = [];
     let row: League[] = [];
+
     for (let i = 0; i < leagues.length; i++) {
         row.push(leagues[i]);
         if (i % 3 === 2) {
@@ -30,11 +29,10 @@ const FormRow = (props: { rowOfLeagues: League[], rowNumber: number }) => {
     return (
         <React.Fragment>
             {rowOfLeagues.map((league: League) => {
-                const palette = ['#efddcd', '#ff5f65', '#0cc2bc', '#e28d00', '#c2e12e'];
                 const randomNumber = random0to5();
 
                 const Item = styled(Paper)(({ theme }) => ({
-                    backgroundColor: palette[randomNumber],
+                    backgroundColor: PALETTE[randomNumber],
                     padding: theme.spacing(1),
                     textAlign: 'center',
                     disableElevation: true,

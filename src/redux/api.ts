@@ -1,8 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { useEffect, useState } from 'react';
 
+import { BASE_URL } from '../utils/constants';
+
 const useFetchRoutes = () => {
-    const url = 'https://api-football-standings.azharimm.site/leagues/';
+    const url = BASE_URL;
     const [league, setLeague]: [LeagueQuery | undefined, (obj:LeagueQuery)=>void] = useState();
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -40,7 +42,7 @@ const useFetchRoutes = () => {
 
 export const leagueApi = createApi({
     reducerPath: 'leagueApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://api-football-standings.azharimm.site/leagues/' }),
+    baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
     endpoints: builder => ({
         getLeagueByNameAndSeason: builder.query<Standings, string>({
             query: endpoint => endpoint,

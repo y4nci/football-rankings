@@ -2,11 +2,11 @@ import React, { StrictMode } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { useFetchRoutes } from './redux/api';
 import { NestedGrid } from './pages/components/grid';
 import Navbar from './pages/components/Navbar';
 import Home from './pages/Home';
 import StandingsPage from './pages/standingsPage';
+import { useFetchRoutes } from './redux/api';
 import { store } from './store';
 
 const App = () => {
