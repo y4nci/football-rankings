@@ -29,7 +29,7 @@ const FormRow = (props: { rowOfLeagues: League[] }) => {
 
     return (
         <React.Fragment>
-            {rowOfLeagues.map((league: League) => {
+            {rowOfLeagues.map((league: League, index) => {
                 const randomNumber = random0to5();
 
                 const Item = styled(Paper)(({ theme }) => ({
@@ -40,7 +40,7 @@ const FormRow = (props: { rowOfLeagues: League[] }) => {
                 }));
 
                 return (
-                    <Grid item xs={4}>
+                    <Grid item xs={4} key={index}>
                         <Item className="league-item" >
                             <Link to={'/' + league.id[0] + league.id[1] + league.id[2] + '/' + getCurrentSeason()}>
                                 <img className="league-logo" src={league.logos.light} alt={league.name} />
@@ -59,8 +59,8 @@ export const LeagueGrid = (props: { leagues: League[] }) => {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Grid className="grid" container spacing={1}>
-                {rows.map((row: League[]) => (
-                    <Grid container item spacing={{ xs: 2, md: 3 }}>
+                {rows.map((row: League[], index) => (
+                    <Grid container item spacing={{ xs: 2, md: 3 }} key={index}>
                         <FormRow rowOfLeagues={row}/>
                     </Grid>))}
             </Grid>

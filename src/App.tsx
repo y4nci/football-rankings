@@ -24,8 +24,8 @@ const App = () => {
                             && (<div className="content">
                                 <Switch>
                                     <Route exact path="/" component={Home} />
-                                    {leagues.data.map((league: League) => (
-                                        <Route path={`/${league.id[0] + league.id[1] + league.id[2]}/:id`}>
+                                    {leagues.data.map((league: League, index) => (
+                                        <Route path={`/${league.id[0] + league.id[1] + league.id[2]}/:id`} key={index}>
                                             <Standings leagueName={league.id[0] + league.id[1] + league.id[2]}/>
                                         </Route>))}
                                 </Switch>

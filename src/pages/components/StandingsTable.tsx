@@ -44,8 +44,8 @@ export const StandingsTable = (props: { rows: Team[] }) => {
                         <StyledTableCell align="left"/>
                         <StyledTableCell align="left">Team</StyledTableCell>
 
-                        {TEAM_STATS.map(entry => (
-                            <StyledTableCell align="right">{entry}</StyledTableCell>
+                        {TEAM_STATS.map((entry, index) => (
+                            <StyledTableCell align="right" key={index}>{entry}</StyledTableCell>
                         ))}
                     </TableRow>
                 </TableHead>
@@ -72,14 +72,14 @@ export const StandingsTable = (props: { rows: Team[] }) => {
                                 </StyledTableCellTeam>
                                 <StyledTableCellTeam align="left" >
                                     {row.team.logos
-                                        ? <img src={row.team.logos[0].href} alt={row.team.name} width="30" height="30"/>
+                                        ? <img src={row.team.logos[0].href} alt={row.team.name} width="40" height="40"/>
                                         : <></>
                                     }
                                 </StyledTableCellTeam>
                                 <StyledTableCellTeam align="left" >{row.team.name}</StyledTableCellTeam>
 
-                                {TEAM_STATS_INDEX_MAP.map(entry => (
-                                    <StyledTableCellTeam align="right">{row.stats[entry].value}</StyledTableCellTeam>
+                                {TEAM_STATS_INDEX_MAP.map((entry, idx) => (
+                                    <StyledTableCellTeam align="right" key={idx}>{row.stats[entry].value}</StyledTableCellTeam>
                                 ))}
                             </StyledTableRow>
                         );
