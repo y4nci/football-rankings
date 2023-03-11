@@ -1,26 +1,57 @@
 {
+  "include": ["./src/**/*"],
+  "exclude": ["./dist/**/*", "./node_modules/**/*"],
   "compilerOptions": {
-    "target": "es5",
+    "incremental": true,
+    "target": "ES2020",
+    "module": "commonjs",
     "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+      "ESNEXT",
+      "DOM",
+      "DOM.Iterable",
+      "WebWorker",
+      "ScriptHost"
     ],
     "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "checkJs": false,
+    "jsx": "react",
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": false,
+    "outDir": "./dist",
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "noImplicitThis": true,
+
+    /* Additional Checks */
+    "noUnusedLocals": true,                                /* Report errors on unused locals. */
+    "noUnusedParameters": true,                            /* Report errors on unused parameters. */
+    "noImplicitReturns": true,                             /* Report error when not all code paths in function return a value. */
+    "noFallthroughCasesInSwitch": true,                    /* Report errors for fallthrough cases in switch statement. */
+    "noUncheckedIndexedAccess": true,                      /* Include 'undefined' in index signature results */
+    "noPropertyAccessFromIndexSignature": true,            /* Require undeclared properties from index signatures to use element accesses. */
+
+    /* Module Resolution Options */
+    "baseUrl": "./",
+    "noEmit": false,
+    "paths": {
+      "*": ["./src/types/*.d.ts"],
+      "react": [ "./node_modules/@types/react" ],
+    },
+    "plugins": [
+      {
+        "name": "typescript-strict-plugin",
+        "paths": [
+        ]
+      }
+    ],
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react"
-  },
-  "include": [
-    "src"
-  ]
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    /* Advanced Options */
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
 }

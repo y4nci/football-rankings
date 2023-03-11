@@ -1,8 +1,8 @@
-import {League} from "./league";
+import { League } from './league';
 
 type LeagueQuery = {
-  status: boolean,
-  data: [League]
-}
+    status: boolean,
+    data: [League]
+};
 
-export type {LeagueQuery};
+export type { LeagueQuery };

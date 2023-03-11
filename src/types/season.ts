@@ -1,5 +1,5 @@
 type Season = {
-  /*
+    /*
   {"year":2004,"startDate":"2004-08-01T04:00Z",
         "endDate":"2005-08-01T03:59Z",
         "displayName":"2004-05 Barclays Premier League",
@@ -11,20 +11,20 @@ type Season = {
           "hasStandings":true}]}
    */
 
-  year: number;
-  startDate: string;
-  endDate: string;
-  displayName: string;
-  types: [
-    {
-      id: string;
-      name: string;
-      abbreviation: string;
-      startDate: string;
-      endDate: string;
-      hasStandings: boolean;
-    }
-  ]
-}
+    year: number;
+    startDate: string;
+    endDate: string;
+    displayName: string;
+    types: [
+        {
+            id: string;
+            name: string;
+            abbreviation: string;
+            startDate: string;
+            endDate: string;
+            hasStandings: boolean;
+        },
+    ]
+};
 
-export type {Season};
+export type { Season };
