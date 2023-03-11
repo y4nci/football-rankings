@@ -4,8 +4,10 @@ import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { PALETTE } from "../../utils/constants";
-import { random0to5 } from "../../utils/math";
+
+import { PALETTE } from '../../utils/constants';
+import { getCurrentSeason } from '../../utils/datetime';
+import { random0to5 } from '../../utils/math';
 
 const divideIntoRows = (leagues: League[]) => {
     let rows: League[][] = [];
@@ -22,9 +24,8 @@ const divideIntoRows = (leagues: League[]) => {
     return rows;
 };
 
-const FormRow = (props: { rowOfLeagues: League[], rowNumber: number }) => {
-    let rowOfLeagues = props.rowOfLeagues;
-    // let rowNumber = props.rowNumber;
+const FormRow = (props: { rowOfLeagues: League[] }) => {
+    const { rowOfLeagues } = props;
 
     return (
         <React.Fragment>
@@ -41,7 +42,7 @@ const FormRow = (props: { rowOfLeagues: League[], rowNumber: number }) => {
                 return (
                     <Grid item xs={4}>
                         <Item className="league-item" >
-                            <Link to={'/' + league.id[0] + league.id[1] + league.id[2] + '/2022'}>
+                            <Link to={'/' + league.id[0] + league.id[1] + league.id[2] + '/' + getCurrentSeason()}>
                                 <img className="league-logo" src={league.logos.light} alt={league.name} />
                             </Link>
                         </Item>
@@ -51,19 +52,17 @@ const FormRow = (props: { rowOfLeagues: League[], rowNumber: number }) => {
     );
 };
 
-const NestedGrid = (leagues: League[]) => {
-    let rows = divideIntoRows(leagues);
+export const LeagueGrid = (leagues: League[]) => {
+    const rows = divideIntoRows(leagues);
 
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Grid className="grid" container spacing={1}>
-                {rows.map((row: League[], index) => (
+                {rows.map((row: League[]) => (
                     <Grid container item spacing={{ xs: 2, md: 3 }}>
-                        <FormRow rowOfLeagues={row} rowNumber={index}/>
+                        <FormRow rowOfLeagues={row}/>
                     </Grid>))}
             </Grid>
         </Box>
     );
 };
-
-export { NestedGrid };

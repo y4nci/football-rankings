@@ -71,8 +71,10 @@ declare type Stat = {
     description: string,
     abbreviation: string,
     type: string,
-    value: number,
-    displayValue: string
+    value?: number,
+    displayValue: string,
+    id?: string,
+    summary?: string,
 };
 
 
@@ -100,29 +102,5 @@ declare type Team = {
         description: string,
         rank: number
     },
-    stats: [
-        Stat,
-        Stat,
-        Stat,
-        Stat,
-        Stat,
-        Stat,
-        Stat,
-        Stat,
-        Stat,
-        Stat,
-        Stat,
-        Stat,
-        {
-            id: string,
-            name: string,
-            abbreviation: string,
-            displayName: string,
-            shortDisplayName: string,
-            description: string,
-            type: string,
-            summary: string,
-            displayValue: string,
-        },
-    ]
+    stats: Stat[]
 };

@@ -8,6 +8,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import * as React from 'react';
 
+import { TEAM_STATS, TEAM_STATS_INDEX_MAP } from '../../utils/constants';
+
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
     '&:nth-of-type(odd)': {
         backgroundColor: theme.palette.action.hover,
@@ -30,7 +32,9 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     },
 }));
 
-const CustomizedTables = (rows: Team[]) => {
+export const StandingsTable = (props: { rows: Team[] }) => {
+    const { rows } = props;
+
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 700, maxHeight: 800 }} aria-label="customized table">
@@ -38,21 +42,16 @@ const CustomizedTables = (rows: Team[]) => {
                     <TableRow>
                         <StyledTableCell>Rank</StyledTableCell>
                         <StyledTableCell align="left">Team</StyledTableCell>
-                        <StyledTableCell align="right">GP</StyledTableCell>
-                        <StyledTableCell align="right">W</StyledTableCell>
-                        <StyledTableCell align="right">D</StyledTableCell>
-                        <StyledTableCell align="right">L</StyledTableCell>
-                        <StyledTableCell align="right">GF</StyledTableCell>
-                        <StyledTableCell align="right">GA</StyledTableCell>
-                        <StyledTableCell align="right">GD</StyledTableCell>
-                        <StyledTableCell align="right">P</StyledTableCell>
+
+                        {TEAM_STATS.map(entry => (
+                            <StyledTableCell align="right">{entry}</StyledTableCell>
+                        ))}
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {rows.map((row, index) => {
-                        let colour = '';
-                        if (row.note === undefined) colour = '#CCCCCC';
-                        else colour = row.note.color;
+                        const colour = !(row.note) ? '#CCCCCC' : row.note.color;
+
                         const StyledTableCellTeam = styled(TableCell)(({ theme }) => ({
                             [`&.${tableCellClasses.head}`]: {
                                 backgroundColor: theme.palette.common.black,
@@ -64,21 +63,17 @@ const CustomizedTables = (rows: Team[]) => {
                                 backgroundColor: colour,
                             },
                         }));
-                        return (
 
+                        return (
                             <StyledTableRow key={index}>
                                 <StyledTableCellTeam component="th" scope="row" >
                                     {index + 1}
                                 </StyledTableCellTeam>
                                 <StyledTableCellTeam align="left" >{row.team.name}</StyledTableCellTeam>
-                                <StyledTableCellTeam align="right">{row.stats[0].value}</StyledTableCellTeam>
-                                <StyledTableCellTeam align="right">{row.stats[6].value}</StyledTableCellTeam>
-                                <StyledTableCellTeam align="right">{row.stats[5].value}</StyledTableCellTeam>
-                                <StyledTableCellTeam align="right">{row.stats[1].value}</StyledTableCellTeam>
-                                <StyledTableCellTeam align="right">{row.stats[4].value}</StyledTableCellTeam>
-                                <StyledTableCellTeam align="right">{row.stats[3].value}</StyledTableCellTeam>
-                                <StyledTableCellTeam align="right">{row.stats[8].value}</StyledTableCellTeam>
-                                <StyledTableCellTeam align="right">{row.stats[2].value}</StyledTableCellTeam>
+
+                                {TEAM_STATS_INDEX_MAP.map(entry => (
+                                    <StyledTableCellTeam align="right">{row.stats[entry].value}</StyledTableCellTeam>
+                                ))}
                             </StyledTableRow>
                         );
                     })}
@@ -87,5 +82,3 @@ const CustomizedTables = (rows: Team[]) => {
         </TableContainer>
     );
 };
-
-export { CustomizedTables };

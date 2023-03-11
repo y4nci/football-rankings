@@ -2,10 +2,10 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import { useGetAvailableSeasonsQuery, useGetLeagueByNameAndSeasonQuery } from '../redux/api';
-import { CustomizedTables } from './components/table';
+import { StandingsTable } from './components/StandingsTable';
 
-const StandingsPage = (props:{ leagueName:string }) => {
-    const leagueName = props.leagueName;
+const Standings = (props:{ leagueName:string }) => {
+    const { leagueName } = props;
     const { id } = useParams<{ id: string }>();
     const {
         data: league,
@@ -17,8 +17,6 @@ const StandingsPage = (props:{ leagueName:string }) => {
         error: errorSeasons,
         isLoading: isLoadingSeasons,
     } = useGetAvailableSeasonsQuery(`${leagueName}.1/seasons`);
-
-    console.log(league);
 
     return (
         <div className="standings-page" >
@@ -52,12 +50,9 @@ const StandingsPage = (props:{ leagueName:string }) => {
 
 
 
-            <div>{league && CustomizedTables(league.data.standings)}</div>
+            <div>{league && <StandingsTable rows={league.data.standings}/> }</div>
         </div>
     );
 };
 
-
-export default StandingsPage;
-
-
+export default Standings;

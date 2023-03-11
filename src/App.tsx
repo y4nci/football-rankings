@@ -2,10 +2,10 @@ import React, { StrictMode } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { NestedGrid } from './pages/components/grid';
+import { LeagueGrid } from './pages/components/LeagueGrid';
 import Navbar from './pages/components/Navbar';
 import Home from './pages/Home';
-import StandingsPage from './pages/standingsPage';
+import Standings from './pages/Standings';
 import { useFetchRoutes } from './redux/api';
 import { store } from './store';
 
@@ -25,13 +25,13 @@ const App = () => {
                                     <Route exact path="/" component={Home} />
                                     {leagues.data.map((league: League) => (
                                         <Route path={`/${league.id[0] + league.id[1] + league.id[2]}/:id`}>
-                                            <StandingsPage leagueName={league.id[0] + league.id[1] + league.id[2]}/>
+                                            <Standings leagueName={league.id[0] + league.id[1] + league.id[2]}/>
                                         </Route>))}
                                 </Switch>
                             </div>
                         )}
                     </Router>
-                    <div className="league-grid">{leagues && (NestedGrid(leagues.data))}</div>
+                    <div className="league-grid">{leagues && (LeagueGrid(leagues.data))}</div>
                 </div>
             </Provider>
         </StrictMode>
