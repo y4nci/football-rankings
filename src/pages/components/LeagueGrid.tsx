@@ -41,11 +41,12 @@ const FormRow = (props: { rowOfLeagues: League[] }) => {
 
                 return (
                     <Grid item xs={4} key={index}>
-                        <Item className="league-item" >
-                            <Link to={'/' + league.id[0] + league.id[1] + league.id[2] + '/' + getCurrentSeason()}>
+                        <Link to={'/' + league.id[0] + league.id[1] + league.id[2] + '/' + getCurrentSeason()}>
+                            <Item className="league-item" >
                                 <img className="league-logo" src={league.logos.light} alt={league.name} />
-                            </Link>
-                        </Item>
+                                <div style={{ fontSize: 'larger' }}>{league.name}</div>
+                            </Item>
+                        </Link>
                     </Grid>);
             })}
         </React.Fragment>
