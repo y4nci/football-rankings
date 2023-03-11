@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-import { useGetAvailableSeasonsQuery, useGetLeagueByNameAndSeasonQuery } from '../components/common/api';
-import { CustomizedTables } from '../components/common/table';
+import { useGetAvailableSeasonsQuery, useGetLeagueByNameAndSeasonQuery } from '../redux/api';
+import { CustomizedTables } from './components/table';
 
 const StandingsPage = (props:{ leagueName:string }) => {
     const leagueName = props.leagueName;

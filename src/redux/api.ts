@@ -1,10 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { useEffect, useState } from 'react';
 
-import { LeagueQuery } from '../../types/leagueQuery';
-import { SeasonQuery } from '../../types/seasonQuery';
-import { Standings } from '../../types/standings';
-
 const useFetchRoutes = () => {
     const url = 'https://api-football-standings.azharimm.site/leagues/';
     const [league, setLeague]: [LeagueQuery | undefined, (obj:LeagueQuery)=>void] = useState();

@@ -6,12 +6,12 @@ Mackolik is an app written in React Native.
 It is a football app that shows the latest standings from available leagues.
 
 # HOME
-![Home](src/assets/screenshot-home.png) 
+![Home](src/assets/images/screenshot-home.png) 
 
 # STANDINGS
-![Standings](src/assets/screenshot-standings.png)
+![Standings](src/assets/images/screenshot-standings.png)
 
 # LEAGUES
-![leagues](src/assets/screenshot-leagues.png)
+![leagues](src/assets/images/screenshot-leagues.png)
 
 

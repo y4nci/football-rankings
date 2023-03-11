@@ -5,8 +5,6 @@ import { styled } from '@mui/material/styles';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-import { League } from '../types/league';
-
 const random0to5 = () => {
     return Math.floor(Math.random() * 5);
 };
