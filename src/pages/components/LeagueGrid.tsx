@@ -52,7 +52,8 @@ const FormRow = (props: { rowOfLeagues: League[] }) => {
     );
 };
 
-export const LeagueGrid = (leagues: League[]) => {
+export const LeagueGrid = (props: { leagues: League[] }) => {
+    const { leagues } = props;
     const rows = divideIntoRows(leagues);
 
     return (

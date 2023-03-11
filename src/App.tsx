@@ -11,6 +11,7 @@ import { store } from './store';
 
 const App = () => {
     const { data: leagues, error, isLoading } = useFetchRoutes();
+
     return (
         <StrictMode>
             <Provider store={store}>
@@ -19,8 +20,8 @@ const App = () => {
                     <Router>
                         {(leagues === undefined || isLoading) && <div className="loading">loading...</div>}
                         {error && <p>{error}</p>}
-                        {leagues && (
-                            <div className="content">
+                        {leagues
+                            && (<div className="content">
                                 <Switch>
                                     <Route exact path="/" component={Home} />
                                     {leagues.data.map((league: League) => (
@@ -29,9 +30,9 @@ const App = () => {
                                         </Route>))}
                                 </Switch>
                             </div>
-                        )}
+                            )}
                     </Router>
-                    <div className="league-grid">{leagues && (LeagueGrid(leagues.data))}</div>
+                    <div className="league-grid">{leagues && <LeagueGrid leagues={leagues.data}/>}</div>
                 </div>
             </Provider>
         </StrictMode>

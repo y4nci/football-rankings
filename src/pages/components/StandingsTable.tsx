@@ -41,6 +41,7 @@ export const StandingsTable = (props: { rows: Team[] }) => {
                 <TableHead>
                     <TableRow>
                         <StyledTableCell>Rank</StyledTableCell>
+                        <StyledTableCell align="left"/>
                         <StyledTableCell align="left">Team</StyledTableCell>
 
                         {TEAM_STATS.map(entry => (
@@ -68,6 +69,12 @@ export const StandingsTable = (props: { rows: Team[] }) => {
                             <StyledTableRow key={index}>
                                 <StyledTableCellTeam component="th" scope="row" >
                                     {index + 1}
+                                </StyledTableCellTeam>
+                                <StyledTableCellTeam align="left" >
+                                    {row.team.logos
+                                        ? <img src={row.team.logos[0].href} alt={row.team.name} width="30" height="30"/>
+                                        : <></>
+                                    }
                                 </StyledTableCellTeam>
                                 <StyledTableCellTeam align="left" >{row.team.name}</StyledTableCellTeam>
 
