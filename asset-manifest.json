@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/mackolik/static/css/main.60ddd24e.css",
+    "main.js": "/mackolik/static/js/main.18f4e517.js",
+    "static/js/787.743b58c3.chunk.js": "/mackolik/static/js/787.743b58c3.chunk.js",
+    "static/media/home-background.png": "/mackolik/static/media/home-background.373d7b0c92ea5fb6de49.png",
+    "static/media/Saira-Medium.ttf": "/mackolik/static/media/Saira-Medium.67a0acedf3eb6fa55679.ttf",
+    "static/media/Saira-Regular.ttf": "/mackolik/static/media/Saira-Regular.17aa34c01b8fe1b35d2b.ttf",
+    "static/media/Saira-Thin.ttf": "/mackolik/static/media/Saira-Thin.27d1b76f823ef831c528.ttf",
+    "static/media/Saira-SemiBold.ttf": "/mackolik/static/media/Saira-SemiBold.225ab9da1d028b5cc66a.ttf",
+    "static/media/Saira-ExtraBold.ttf": "/mackolik/static/media/Saira-ExtraBold.cb66fe012ebfa50c8663.ttf",
+    "static/media/Saira-ExtraLight.ttf": "/mackolik/static/media/Saira-ExtraLight.0f7e820c320aa473833e.ttf",
+    "static/media/Saira-Light.ttf": "/mackolik/static/media/Saira-Light.530b07449b922344ae8f.ttf",
+    "static/media/Saira-Bold.ttf": "/mackolik/static/media/Saira-Bold.230ff8251599fd06ef99.ttf",
+    "static/media/Saira-Black.ttf": "/mackolik/static/media/Saira-Black.7227e0e7c0b85ac1726f.ttf",
+    "index.html": "/mackolik/index.html",
+    "main.60ddd24e.css.map": "/mackolik/static/css/main.60ddd24e.css.map",
+    "main.18f4e517.js.map": "/mackolik/static/js/main.18f4e517.js.map",
+    "787.743b58c3.chunk.js.map": "/mackolik/static/js/787.743b58c3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.60ddd24e.css",
+    "static/js/main.18f4e517.js"
+  ]
+}
