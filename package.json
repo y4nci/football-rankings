@@ -1,6 +1,7 @@
 {
   "name": "mackolik",
   "version": "0.0.0",
+  "homepage": "https://y4nci.github.io/mackolik",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.0",
@@ -9,9 +10,9 @@
     "@reduxjs/toolkit": "^1.8.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^8.0.2",
     "react-router-dom": "^5.3.3",
     "react-scripts": "5.0.1",
-    "react-redux": "^8.0.2",
     "typescript": "^4.7.4",
     "web-vitals": "^2.1.4"
   },
@@ -21,7 +22,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.{tsx,ts,js}\" --fix",
-    "clean": "rm -rf node_modules"
+    "clean": "rm -rf node_modules",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "postbuild": "ln -s index.html build/404.html"
   },
   "eslintConfig": {
     "extends": [
@@ -42,21 +46,22 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.45",
+    "@types/react": "^17.0.8",
+    "@types/react-dom": "^17.0.8",
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
     "@webpack-cli/generators": "^3.0.1",
     "css-loader": "^6.7.3",
     "eslint": "^8.32.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-import-resolver-typescript": "^3.5.3",
     "eslint-plugin-simple-import-sort": "^9.0.0",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/react": "^17.0.8",
-    "@types/react-dom": "^17.0.8",
-    "@types/react-router-dom": "^5.3.3",
-    "@typescript-eslint/eslint-plugin": "^5.40.1",
-    "@typescript-eslint/parser": "^5.40.1",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.11.45"
+    "gh-pages": "^5.0.0"
   }
 }

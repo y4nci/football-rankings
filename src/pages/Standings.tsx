@@ -33,13 +33,13 @@ const Standings = (props:{ leagueName:string }) => {
                 }
                 {league
                     && id !== String(seasons.data.seasons[seasons.data.seasons.length - 1].year)
-                    && <Link className="season-navigator" to={`/${leagueName}/${Number(id) - 1}`}
+                    && <Link className="season-navigator" to={`/mackolik/${leagueName}/${Number(id) - 1}`}
                         style={{ textDecoration: 'none' }}>{`${Number(id) - 1} - ${id}`}</Link>
                 }
                 <h3 className="season-name">{league && `${id} - ${Number(id) + 1}`}</h3>
                 {league
                     && id !== String(seasons.data.seasons[0].year)
-                    && <Link className="season-navigator" to={`/${leagueName}/${Number(id) + 1}`}
+                    && <Link className="season-navigator" to={`/mackolik/${leagueName}/${Number(id) + 1}`}
                         style={{ textDecoration: 'none' }}>{`${Number(id) + 1} - ${Number(id) + 2}`}</Link>
                 }
                 {league
