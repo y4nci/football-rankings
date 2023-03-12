@@ -78,9 +78,13 @@ export const StandingsTable = (props: { rows: Team[] }) => {
                                 </StyledTableCellTeam>
                                 <StyledTableCellTeam align="left" >{row.team.name}</StyledTableCellTeam>
 
-                                {TEAM_STATS_INDEX_MAP.map((entry, idx) => (
+                                {TEAM_STATS_INDEX_MAP.slice(0, -1).map((entry, idx) => (
                                     <StyledTableCellTeam align="right" key={idx}>{row.stats[entry].value}</StyledTableCellTeam>
                                 ))}
+
+                                <StyledTableCellTeam align="right" style={{ fontFamily: 'Saira-Bold' }}>
+                                    {row.stats[TEAM_STATS_INDEX_MAP[TEAM_STATS_INDEX_MAP.length - 1]].value}
+                                </StyledTableCellTeam>
                             </StyledTableRow>
                         );
                     })}

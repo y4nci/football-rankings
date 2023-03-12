@@ -13,12 +13,12 @@
   url("../fonts/Saira/static/Saira-Black.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Saira";   /*Can be any text*/
+  font-family: "Saira-Bold";   /*Can be any text*/
   src: local("Saira-Bold"),
   url("../fonts/Saira/static/Saira-Bold.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Saira";   /*Can be any text*/
+  font-family: "Saira-Black";   /*Can be any text*/
   src: local("Saira-ExtraBold"),
   url("../fonts/Saira/static/Saira-ExtraBold.ttf") format("truetype");
 }
