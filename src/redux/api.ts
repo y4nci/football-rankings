@@ -1,10 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { useEffect, useState } from 'react';
 
-import { BASE_URL } from '../utils/constants';
+import { AVAILABLE_LEAGUES_URL, BASE_URL } from '../utils/constants';
 
 const useFetchRoutes = () => {
-    const url = BASE_URL;
+    const url = AVAILABLE_LEAGUES_URL;
     const [league, setLeague]: [LeagueQuery | undefined, (obj:LeagueQuery)=>void] = useState();
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);

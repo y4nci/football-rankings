@@ -1,17 +1,33 @@
+declare type LeagueLogo = {
+    href: string,
+    width: number,
+    height: number,
+    alt: string,
+    rel: any[],
+    lastUpdated: string,
+};
+
 declare type League = {
     id: string,
+    alternateId: string,
     name: string,
+    abbreviation: string,
+    shortName: string,
+    midsizeName: string,
     slug: string,
-    abbr: string,
-    logos: {
-        light: string,
-        dark: string,
+    season: {
+        type: {
+            id: string,
+            hasStandings: boolean,
+        }
     }
+    links: any[],
+    logos: [LeagueLogo, LeagueLogo],
+    hasStandings: boolean,
 };
 
 declare type LeagueQuery = {
-    status: boolean,
-    data: [League]
+    leagues: League[],
 };
 
 declare type Season = {
@@ -44,24 +60,34 @@ declare type Season = {
 };
 
 declare type SeasonQuery = {
-    status: boolean;
-    data: {
-        name: string,
-        desc: string,
-        abbreviation: string,
-        seasons: [Season]
-    }
+    children: any[];
+    seasons: Season[],
 };
 
 declare type Standings = {
+    uid: string,
     id: number,
-    data: {
+    name: string,
+    abbreviation: string,
+    children: {
+        uid: string,
+        id: string,
         name: string,
         abbreviation: string,
+        standings: {
+            id: string,
+            name: string,
+            displayName: string,
+            links: any[],
+            season: number,
+            seasonType: number,
+            entries: Team[],
+        }
+
         seasonDisplay: string,
         season: string,
-        standings: Team[],
-    }
+    }[],
+    seasons: Season[],
 };
 
 declare type Stat = {
@@ -93,9 +119,11 @@ declare type Team = {
             width: number,
             height: number,
             alt: string,
-            rel: string[],
+            rel: any[],
             lastUpdated: string
         }],
+        links: any[],
+        isNational: false,
     },
     note?: {
         color: string,

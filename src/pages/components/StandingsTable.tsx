@@ -32,8 +32,30 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     },
 }));
 
+const sortTeams = (teams: Team[]) => {
+    if (!teams || teams.length === 0) return [];
+
+    let sortedTeams = [...teams];
+
+    return sortedTeams.sort((a, b) => {
+        const aPts = a.stats[TEAM_STATS_INDEX_MAP[TEAM_STATS_INDEX_MAP.length - 1]].value;
+        const bPts = b.stats[TEAM_STATS_INDEX_MAP[TEAM_STATS_INDEX_MAP.length - 1]].value;
+        if (aPts > bPts) return -1;
+        if (aPts < bPts) return 1;
+
+        const aGD = a.stats[TEAM_STATS_INDEX_MAP[TEAM_STATS_INDEX_MAP.length - 2]].value;
+        const bGD = b.stats[TEAM_STATS_INDEX_MAP[TEAM_STATS_INDEX_MAP.length - 2]].value;
+        if (aGD > bGD) return -1;
+        if (aGD < bGD) return 1;
+
+        return 0;
+    });
+};
+
 export const StandingsTable = (props: { rows: Team[] }) => {
     const { rows } = props;
+
+    const sortedRows = sortTeams(rows);
 
     return (
         <TableContainer component={Paper}>
@@ -50,7 +72,7 @@ export const StandingsTable = (props: { rows: Team[] }) => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map((row, index) => {
+                    {sortedRows.map((row, index) => {
                         const colour = !(row.note) ? '#CCCCCC' : row.note.color;
 
                         const StyledTableCellTeam = styled(TableCell)(({ theme }) => ({

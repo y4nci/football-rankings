@@ -41,9 +41,11 @@ const FormRow = (props: { rowOfLeagues: League[] }) => {
 
                 return (
                     <Grid item xs={4} key={index}>
-                        <Link to={'/mackolik/' + league.id[0] + league.id[1] + league.id[2] + '/' + getCurrentSeason()}>
+                        <Link to={'/mackolik/' + league.slug + '/' + getCurrentSeason()}>
                             <Item className="league-item" >
-                                <img className="league-logo" src={league.logos.light} alt={league.name} />
+                                {league.logos[0]
+                                    && <img className="league-logo" src={league.logos[0].href} alt={league.name}/>
+                                }
                                 <div style={{ fontSize: 'larger' }}>{league.name}</div>
                             </Item>
                         </Link>
@@ -55,7 +57,7 @@ const FormRow = (props: { rowOfLeagues: League[] }) => {
 
 export const LeagueGrid = (props: { leagues: League[] }) => {
     const { leagues } = props;
-    const rows = divideIntoRows(leagues);
+    const rows = divideIntoRows(leagues.filter(entry => entry.hasStandings));
 
     return (
         <Box sx={{ flexGrow: 1 }}>
