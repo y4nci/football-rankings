@@ -71,7 +71,6 @@ a {
   margin: 50px 20vw;
   justify-content: center;
   align-items: center;
-  min-height: 500px;
 }
 
 .league-button {
@@ -92,9 +91,11 @@ a {
 }
 
 .league-item {
-  min-height: 140px;
+  min-height: 200px;
   min-width: 100px;
   cursor: pointer;
+  display: flex;
+    flex-direction: column;
 }
 
 .league-logo {
