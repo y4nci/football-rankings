@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { getCurrentSeason } from '../../utils/datetime';
 
-const Navbar = () => {
+const Header = () => {
     const currentSeason = getCurrentSeason();
 
     return (
@@ -28,4 +28,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Header;

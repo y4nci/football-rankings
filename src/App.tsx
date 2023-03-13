@@ -2,8 +2,9 @@ import React, { StrictMode } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import { Footer } from './pages/components/Footer';
+import Header from './pages/components/Header';
 import { LeagueGrid } from './pages/components/LeagueGrid';
-import Navbar from './pages/components/Navbar';
 import Home from './pages/Home';
 import Standings from './pages/Standings';
 import { useFetchRoutes } from './redux/api';
@@ -19,7 +20,7 @@ const App = () => {
             </head>
             <Provider store={store}>
                 <div className="App">
-                    <Navbar />
+                    <Header />
                     <Router>
                         {(leagues === undefined || isLoading) && <div className="loading">loading...</div>}
                         {error && <p>{error}</p>}
@@ -36,6 +37,7 @@ const App = () => {
                             )}
                     </Router>
                     <div className="league-grid">{leagues && <LeagueGrid leagues={leagues.data}/>}</div>
+                    <Footer />
                 </div>
             </Provider>
         </StrictMode>
