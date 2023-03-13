@@ -1,4 +1,4 @@
-import React, { StrictMode } from 'react';
+import React, { StrictMode, useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -6,12 +6,20 @@ import { Footer } from './pages/components/Footer';
 import Header from './pages/components/Header';
 import { LeagueGrid } from './pages/components/LeagueGrid';
 import Home from './pages/Home';
-import Standings from './pages/Standings';
+import StandingsPage from './pages/StandingsPage';
 import { useFetchRoutes } from './redux/api';
 import { store } from './store';
+import { isLeagueValid } from './utils/validation';
 
 const App = () => {
-    const { data: leagues, error, isLoading } = useFetchRoutes();
+    const { data: allLeagues, error, isLoading } = useFetchRoutes();
+    const [leagues, setLeagues] = useState<League[]>(null);
+
+    useEffect(() => {
+        if (allLeagues) {
+            setLeagues(allLeagues.leagues.filter(league => isLeagueValid(league)));
+        }
+    }, [allLeagues]);
 
     return (
         <StrictMode>
@@ -28,15 +36,18 @@ const App = () => {
                             && (<div className="content">
                                 <Switch>
                                     <Route exact path="/mackolik" component={Home} />
-                                    {leagues.data.map((league: League, index) => (
-                                        <Route exact path={`/mackolik/${league.id[0] + league.id[1] + league.id[2]}/:id`} key={index}>
-                                            <Standings leagueName={league.id[0] + league.id[1] + league.id[2]}/>
+                                    <Route path="/mackolik/leagues">
+                                        <h1 style={{ fontSize:'xxx-large', marginTop: '20px' }}>All Leagues</h1>
+                                    </Route>
+                                    {leagues.map((league: League, index) => (
+                                        <Route exact path={`/mackolik/${league.slug}/:id`} key={index}>
+                                            <StandingsPage leagueName={league.slug}/>
                                         </Route>))}
                                 </Switch>
                             </div>
                             )}
                     </Router>
-                    <div className="league-grid">{leagues && <LeagueGrid leagues={leagues.data}/>}</div>
+                    <div className="league-grid">{leagues && <LeagueGrid leagues={leagues}/>}</div>
                     <Footer />
                 </div>
             </Provider>

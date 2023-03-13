@@ -15,13 +15,25 @@ const divideIntoRows = (leagues: League[]) => {
 
     for (let i = 0; i < leagues.length; i++) {
         row.push(leagues[i]);
-        if (i % 3 === 2) {
+        if (i % 4 === 3) {
             rows.push(row);
             row = [];
         }
     }
     if (row.length > 0) rows.push(row);
     return rows;
+};
+
+const sortLeagues = (leagues: League[]) => {
+    if (!leagues || leagues.length === 0) return [];
+
+    let sortedLeagues = [...leagues];
+
+    return sortedLeagues.sort((a, b) => {
+        if (a.name < b.name) return -1;
+        if (a.name > b.name) return 1;
+        return 0;
+    });
 };
 
 const FormRow = (props: { rowOfLeagues: League[] }) => {
@@ -40,10 +52,17 @@ const FormRow = (props: { rowOfLeagues: League[] }) => {
                 }));
 
                 return (
-                    <Grid item xs={4} key={index}>
-                        <Link to={'/mackolik/' + league.id[0] + league.id[1] + league.id[2] + '/' + getCurrentSeason()}>
+                    <Grid item xs={3} key={index}>
+                        <Link to={'/mackolik/' + league.slug + '/' + getCurrentSeason()}>
                             <Item className="league-item" >
-                                <img className="league-logo" src={league.logos.light} alt={league.name} />
+                                <img
+                                    className="league-logo"
+                                    src={league.logos[0]
+                                        ? league.logos[0].href
+                                        : 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/default-team-logo-500.png'
+                                    }
+                                    alt={league.name}
+                                />
                                 <div style={{ fontSize: 'larger' }}>{league.name}</div>
                             </Item>
                         </Link>
@@ -54,8 +73,8 @@ const FormRow = (props: { rowOfLeagues: League[] }) => {
 };
 
 export const LeagueGrid = (props: { leagues: League[] }) => {
-    const { leagues } = props;
-    const rows = divideIntoRows(leagues);
+    const leagues = sortLeagues(props.leagues);
+    const rows = divideIntoRows(leagues.filter(entry => entry.hasStandings));
 
     return (
         <Box sx={{ flexGrow: 1 }}>

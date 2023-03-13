@@ -11,7 +11,3 @@ It is a football app that shows the latest standings from available leagues.
 # STANDINGS
 ![Standings](src/assets/images/screenshot-standings.png)
 
-# LEAGUES
-![leagues](src/assets/images/screenshot-leagues.png)
-
-
