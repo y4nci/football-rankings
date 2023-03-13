@@ -25,8 +25,6 @@ const StandingsPage = (props:{ leagueName:string }) => {
     if (errorSeasons) return <p>{errorSeasons}</p>;
     if (standings && !isStandingsValid(standings)) return <p>Standings are currently not available for this league.</p>;
 
-    console.log('stand', standings);
-
     return (
         <div className="standings-page" >
             {(isLoadingLeague || isLoadingSeasons) && <div className="loading">loading...</div>}
