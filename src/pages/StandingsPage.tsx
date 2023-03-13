@@ -1,5 +1,5 @@
 import { Button } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import { useGetAvailableSeasonsQuery, useGetLeagueByNameAndSeasonQuery } from '../redux/api';
@@ -20,6 +20,10 @@ const StandingsPage = (props:{ leagueName:string }) => {
         isLoading: isLoadingSeasons,
     } = useGetAvailableSeasonsQuery(`${leagueName}/standings?season=1`);
     const [currentPage, setCurrentPage] = useState(0);
+
+    useEffect(() => {
+        setCurrentPage(0);
+    }, [id, leagueName]);
 
     if (errorLeague) return <p>{errorLeague}</p>;
     if (errorSeasons) return <p>{errorSeasons}</p>;
