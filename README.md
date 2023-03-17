@@ -1,8 +1,6 @@
-# MAÇKOLİK
+# [MACKOLIK](https://y4nci.github.io/mackolik)
 
-![MACKOLIK](logo.png) 
-
-Mackolik is an app written in React Native.
+[Mackolik](https://y4nci.github.io/mackolik) is an app written in React Native.
 It is a football app that shows the latest standings from available leagues.
 
 # HOME
