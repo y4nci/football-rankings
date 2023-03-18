@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/mackolik/static/css/main.74b53e89.css",
+    "main.css": "/mackolik/static/css/main.5b3973ee.css",
     "main.js": "/mackolik/static/js/main.b0bf6fac.js",
     "static/js/787.743b58c3.chunk.js": "/mackolik/static/js/787.743b58c3.chunk.js",
     "static/media/home-background.png": "/mackolik/static/media/home-background.373d7b0c92ea5fb6de49.png",
@@ -14,12 +14,12 @@
     "static/media/Saira-Bold.ttf": "/mackolik/static/media/Saira-Bold.230ff8251599fd06ef99.ttf",
     "static/media/Saira-Black.ttf": "/mackolik/static/media/Saira-Black.7227e0e7c0b85ac1726f.ttf",
     "index.html": "/mackolik/index.html",
-    "main.74b53e89.css.map": "/mackolik/static/css/main.74b53e89.css.map",
+    "main.5b3973ee.css.map": "/mackolik/static/css/main.5b3973ee.css.map",
     "main.b0bf6fac.js.map": "/mackolik/static/js/main.b0bf6fac.js.map",
     "787.743b58c3.chunk.js.map": "/mackolik/static/js/787.743b58c3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.74b53e89.css",
+    "static/css/main.5b3973ee.css",
     "static/js/main.b0bf6fac.js"
   ]
 }
