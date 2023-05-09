@@ -1,6 +1,8 @@
 export const setProperty = (storageKey: string, prop: string, value: any) => {
     const storage = localStorage.getItem(storageKey);
 
+    console.log('we enterin', storageKey, prop, value, storage);
+
     if (storage) {
         const parsedStorage = JSON.parse(storage);
 
@@ -8,6 +10,8 @@ export const setProperty = (storageKey: string, prop: string, value: any) => {
 
         parsedStorage[prop] = value;
         localStorage.setItem(storageKey, JSON.stringify(parsedStorage));
+    } else {
+        localStorage.setItem(storageKey, JSON.stringify({ [prop]: value }));
     }
 };
 
@@ -29,4 +33,8 @@ export const removeProperty = (storageKey: string, prop: string) => {
 
 export const removeItem = (storageKey: string) => {
     localStorage.removeItem(storageKey);
+};
+
+export const itemExists = (storageKey: string) => {
+    return !!localStorage.getItem(storageKey);
 };

@@ -51,8 +51,7 @@
 
 *{
   margin: auto;
-  color: #333;
-
+  /* color: #333; */
 }
 
 a {
@@ -68,7 +67,7 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
-  margin: 50px 20vw;
+  margin: 0 20vw 50px 20vw;
   justify-content: center;
   align-items: center;
 }
@@ -199,12 +198,20 @@ a {
   justify-content: space-evenly;
 }
 
+.league-name-fav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
 .league-name {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #0cc2bc;
-  margin: 20px 0;
+  margin: 20px 5px;
   font-size: 2.5rem;
 }
 

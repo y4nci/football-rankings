@@ -1,13 +1,16 @@
+import { Favorite, FavoriteBorder } from '@mui/icons-material';
 import { Button } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import { useGetAvailableSeasonsQuery, useGetLeagueByNameAndSeasonQuery } from '../redux/api';
+import { FAVOURITES_STORAGE_KEY } from '../utils/constants';
+import { getProperty, setProperty } from '../utils/localStorageUtil';
 import { isStandingsValid } from '../utils/validation';
 import { StandingsTable } from './components/StandingsTable';
 
-const StandingsPage = (props:{ leagueName:string }) => {
-    const { leagueName } = props;
+const StandingsPage = (props:{ leagueName:string, leagueId: string }) => {
+    const { leagueName, leagueId } = props;
     const { id } = useParams<{ id: string }>();
     const {
         data: standings,
@@ -20,6 +23,7 @@ const StandingsPage = (props:{ leagueName:string }) => {
         isLoading: isLoadingSeasons,
     } = useGetAvailableSeasonsQuery(`${leagueName}/standings?season=1`);
     const [currentPage, setCurrentPage] = useState(0);
+    const favouriteLeagueIds: string[] | null = getProperty(FAVOURITES_STORAGE_KEY, 'ids');
 
     useEffect(() => {
         setCurrentPage(0);
@@ -33,7 +37,27 @@ const StandingsPage = (props:{ leagueName:string }) => {
         <div className="standings-page" >
             {(isLoadingLeague || isLoadingSeasons) && <div className="loading">loading...</div>}
 
-            <h2 className="league-name" >{standings && standings.name}</h2>
+            <div className="league-name-fav">
+                <h2 className="league-name" >{standings && standings.name}</h2>
+                {
+                    favouriteLeagueIds && favouriteLeagueIds.findIndex(v => v === leagueId) !== -1
+                        ? <Button variant="text" color="error" onClick={() => {
+                            let favourites = getProperty(FAVOURITES_STORAGE_KEY, 'ids');
+                            favourites = favourites.filter(v => v !== leagueId);
+                            setProperty(FAVOURITES_STORAGE_KEY, 'ids', favourites);
+                            window.location.reload();
+                        }
+                        }><Favorite style={{ margin: '0 5px', color: '#0cc2bc' }}/></Button>
+                        : <Button variant="text" color="success" onClick={() => {
+                            let favourites = getProperty(FAVOURITES_STORAGE_KEY, 'ids');
+                            if (favourites) favourites.push(leagueId);
+                            else favourites = [leagueId];
+                            setProperty(FAVOURITES_STORAGE_KEY, 'ids', favourites);
+                            window.location.reload();
+                        }
+                        }><FavoriteBorder style={{ margin: '0 5px', color: '#0cc2bc' }}/></Button>
+                }
+            </div>
 
             {seasons && <div className="season-names">
                 {standings

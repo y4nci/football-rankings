@@ -9,11 +9,14 @@ import Home from './pages/Home';
 import StandingsPage from './pages/StandingsPage';
 import { useFetchRoutes } from './redux/api';
 import { store } from './store';
+import { FAVOURITES_STORAGE_KEY } from './utils/constants';
+import { getProperty } from './utils/localStorageUtil';
 import { isLeagueValid } from './utils/validation';
 
 const App = () => {
     const { data: allLeagues, error, isLoading } = useFetchRoutes();
     const [leagues, setLeagues] = useState<League[]>(null);
+    const favouriteLeagueIds: string[] = getProperty(FAVOURITES_STORAGE_KEY, 'ids');
 
     useEffect(() => {
         if (allLeagues) {
@@ -37,16 +40,32 @@ const App = () => {
                                 <Switch>
                                     <Route exact path="/mackolik" component={Home} />
                                     <Route path="/mackolik/leagues">
-                                        <h1 style={{ fontSize:'xxx-large', marginTop: '20px' }}>All Leagues</h1>
+                                        <h1 style={{ fontSize:'xxx-large', marginTop: '20px', color: '#333' }}>All Leagues</h1>
                                     </Route>
                                     {leagues.map((league: League, index) => (
                                         <Route exact path={`/mackolik/${league.slug}/:id`} key={index}>
-                                            <StandingsPage leagueName={league.slug}/>
+                                            <StandingsPage leagueName={league.slug} leagueId={league.id}/>
                                         </Route>))}
                                 </Switch>
                             </div>
                             )}
                     </Router>
+                    {favouriteLeagueIds && leagues && (
+                        <>
+                            <h1 style={{ display: 'flex', justifyContent: 'center', fontSize: 'xxx-large', margin: '20px' }}>
+                                Your Favourite Leagues
+                            </h1>
+                            <div className="league-grid">
+                                <LeagueGrid leagues={leagues.filter((v) => {
+                                    return favouriteLeagueIds.findIndex(id => id === v.id) !== -1;
+                                })}/>
+                            </div>
+                        </>
+                    )}
+
+                    <h1 style={{ display: 'flex', justifyContent: 'center', fontSize: 'xxx-large', margin: '20px' }}>
+                        All Leagues
+                    </h1>
                     <div className="league-grid">{leagues && <LeagueGrid leagues={leagues}/>}</div>
                     <Footer />
                 </div>

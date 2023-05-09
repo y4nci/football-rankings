@@ -21,7 +21,7 @@ const Header = () => {
                     <img className="navbar-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/20296.png" alt="img" /></Link>
                 <hr style={{ marginRight: '32px', marginLeft: '16px', height: '64px' }}/>
                 <Link to={'/mackolik/leagues'}>
-                    <h3>All Leagues</h3></Link>
+                    <h3 style={{ color: '#333' }}>All Leagues</h3></Link>
             </div>
         </nav>
     );
