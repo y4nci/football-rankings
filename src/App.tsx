@@ -43,9 +43,7 @@ const App = () => {
                             && (<div className="content">
                                 <Switch>
                                     <Route exact path="/mackolik" component={Home} />
-                                    <Route path="/mackolik/leagues">
-                                        <h1 style={{ fontSize:'xxx-large', marginTop: '20px', color: '#333' }}>All Leagues</h1>
-                                    </Route>
+                                    <Route path="/mackolik/leagues"/>
                                     {leagues.map((league: League, index) => (
                                         <Route exact path={`/mackolik/${league.slug}/:id`} key={index}>
                                             <StandingsPage leagueName={league.slug} leagueId={league.id}/>
