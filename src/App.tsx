@@ -18,6 +18,10 @@ const App = () => {
     const [leagues, setLeagues] = useState<League[]>(null);
     const favouriteLeagueIds: string[] = getProperty(FAVOURITES_STORAGE_KEY, 'ids');
 
+    const showFavouriteLeagues = () => {
+        return leagues && favouriteLeagueIds && favouriteLeagueIds.length !== 0;
+    };
+
     useEffect(() => {
         if (allLeagues) {
             setLeagues(allLeagues.leagues.filter(league => isLeagueValid(league)));
@@ -50,7 +54,7 @@ const App = () => {
                             </div>
                             )}
                     </Router>
-                    {favouriteLeagueIds && leagues && (
+                    {showFavouriteLeagues() && (
                         <>
                             <h1 style={{ display: 'flex', justifyContent: 'center', fontSize: 'xxx-large', margin: '20px' }}>
                                 Your Favourite Leagues
