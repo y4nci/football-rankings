@@ -37,7 +37,7 @@ const sortTeams = (teams: Team[]) => {
 
     let sortedTeams = [...teams];
 
-    return sortedTeams.sort((a, b) => {
+    const sorterFunc = (a: Team, b: Team) => {
         const aPts = a.stats[TEAM_STATS_INDEX_MAP[TEAM_STATS_INDEX_MAP.length - 1]].value;
         const bPts = b.stats[TEAM_STATS_INDEX_MAP[TEAM_STATS_INDEX_MAP.length - 1]].value;
         if (aPts > bPts) return -1;
@@ -48,8 +48,16 @@ const sortTeams = (teams: Team[]) => {
         if (aGD > bGD) return -1;
         if (aGD < bGD) return 1;
 
+        const aRank = a.note?.rank || 0;
+        const bRank = aRank === 0 ? 0 : b.note?.rank || 0;
+
+        if (aRank < bRank) return -1;
+        if (aRank > bRank) return 1;
+
         return 0;
-    });
+    };
+
+    return sortedTeams.sort(sorterFunc);
 };
 
 export const StandingsTable = (props: { rows: Team[] }) => {
