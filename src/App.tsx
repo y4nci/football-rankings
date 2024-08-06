@@ -31,7 +31,7 @@ const App = () => {
     return (
         <StrictMode>
             <head>
-                <base href="/mackolik" />
+                <base href="/football-rankings" />
             </head>
             <Provider store={store}>
                 <div className="App">
@@ -42,10 +42,10 @@ const App = () => {
                         {leagues
                             && (<div className="content">
                                 <Switch>
-                                    <Route exact path="/mackolik" component={Home} />
-                                    <Route path="/mackolik/leagues"/>
+                                    <Route exact path="/football-rankings" component={Home} />
+                                    <Route path="/football-rankings/leagues"/>
                                     {leagues.map((league: League, index) => (
-                                        <Route exact path={`/mackolik/${league.slug}/:id`} key={index}>
+                                        <Route exact path={`/football-rankings/${league.slug}/:id`} key={index}>
                                             <StandingsPage leagueName={league.slug} leagueId={league.id}/>
                                         </Route>))}
                                 </Switch>

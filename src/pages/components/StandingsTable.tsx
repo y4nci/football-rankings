@@ -27,7 +27,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     },
     [`&.${tableCellClasses.body}`]: {
         fontSize: 14,
-        fontFamily: 'Saira',
+        fontFamily: 'Neue-Montreal',
         //backgroundColor: useColour(tableCellClasses.body.);
     },
 }));
@@ -90,7 +90,7 @@ export const StandingsTable = (props: { rows: Team[] }) => {
                             },
                             [`&.${tableCellClasses.body}`]: {
                                 fontSize: 14,
-                                fontFamily: 'Saira',
+                                fontFamily: 'Neue-Montreal',
                                 backgroundColor: colour,
                             },
                         }));
@@ -112,7 +112,7 @@ export const StandingsTable = (props: { rows: Team[] }) => {
                                     <StyledTableCellTeam align="right" key={idx}>{row.stats[entry].value}</StyledTableCellTeam>
                                 ))}
 
-                                <StyledTableCellTeam align="right" style={{ fontFamily: 'Saira-Bold' }}>
+                                <StyledTableCellTeam align="right" style={{ fontWeight: 'bold' }}>
                                     {row.stats[TEAM_STATS_INDEX_MAP[TEAM_STATS_INDEX_MAP.length - 1]].value}
                                 </StyledTableCellTeam>
                             </StyledTableRow>

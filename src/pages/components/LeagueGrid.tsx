@@ -53,7 +53,7 @@ const FormRow = (props: { rowOfLeagues: League[] }) => {
 
                 return (
                     <Grid item xs={3} key={index}>
-                        <Link to={'/mackolik/' + league.slug + '/' + getCurrentSeason()}>
+                        <Link to={'/football-rankings/' + league.slug + '/' + getCurrentSeason()}>
                             <Item className="league-item" >
                                 <img
                                     className="league-logo"

@@ -1,7 +1,7 @@
 {
-  "name": "mackolik",
-  "version": "0.0.0",
-  "homepage": "https://y4nci.github.io/mackolik",
+  "name": "football-rankings",
+  "version": "0.1.0",
+  "homepage": "http://baranyanci.com/football-rankings",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.0",
