@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <nav className="navbar">
             <h1>
-                <Link to="/football-rankings/" style={{ textDecoration: 'none', color: '#0cc2bc', fontWeight: 100 }}>
+                <Link to="/football-rankings/" style={{ textDecoration: 'none', color: '#702a83', fontWeight: 100 }}>
                     football rankings
                 </Link>
             </h1>

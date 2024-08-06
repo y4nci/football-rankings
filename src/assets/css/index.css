@@ -17,6 +17,7 @@ a {
 .App {
   justify-content: center;
   align-items: center;
+  color: #3d185a;
 }
 
 .league-grid {
@@ -42,7 +43,7 @@ a {
 }
 
 .league-button:hover {
-  color: #0cc2bc;
+  color: #702a83;
 }
 
 .league-item {
@@ -83,7 +84,7 @@ a {
 }
 
 .home-title {
-  color: #0cc2bc;
+  color: #702a83;
   font-size: 4.5rem;
 }
 
@@ -96,7 +97,7 @@ a {
 }
 
 .home-links:hover {
-  color: #0cc2bc;
+  color: #702a83;
 }
 
 .links {
@@ -123,12 +124,12 @@ a {
 }
 
 .navbar h1 {
-  color: #0cc2bc;
+  color: #702a83;
   font-size: 4.5rem;
 }
 
 .navbar a:hover {
-  color: #0cc2bc;
+  color: #702a83;
 }
 
 .footer {
@@ -166,7 +167,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #0cc2bc;
+  color: #702a83;
   margin: 20px 5px;
   font-size: 2.5rem;
 }
@@ -175,7 +176,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #0cc2bc;
+  color: #702a83;
   font-size: 1.5rem;
   margin: 20px 0;
 }
@@ -187,7 +188,7 @@ a {
 
 .season-names {
   border-top: 1px solid #f2f2f2;
-  color: #0cc2bc;
+  color: #702a83;
   display: flex;
   margin-left: 10px;
   align-items: center;
@@ -199,13 +200,13 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #000000;
+  color: #3d185a;
   margin-bottom: 30px;
   margin-top: 5px;
 }
 
 .season-navigator:hover {
-  color: #0cc2bc;
+  color: #702a83;
 }
 
 .invalid-season {
