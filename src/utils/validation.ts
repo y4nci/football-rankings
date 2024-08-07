@@ -3,5 +3,5 @@ export const isLeagueValid = (league: League) => {
 };
 
 export const isStandingsValid = (standings: Standings) => {
-    return standings && standings.children.length > 0; // && standings.children[0].standings.entries;
+    return standings && standings.children?.length > 0; // && standings.children[0].standings.entries;
 };

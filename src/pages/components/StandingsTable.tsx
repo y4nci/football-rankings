@@ -22,7 +22,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
-        backgroundColor: '#3d185a',
+        backgroundColor: '#00504d',
         color: theme.palette.common.white,
     },
     [`&.${tableCellClasses.body}`]: {

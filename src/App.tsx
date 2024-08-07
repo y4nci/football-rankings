@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { Footer } from './pages/components/Footer';
 import Header from './pages/components/Header';
-import { LeagueGrid } from './pages/components/LeagueGrid';
+import { LeagueList } from './pages/components/LeagueList';
 import Home from './pages/Home';
 import StandingsPage from './pages/StandingsPage';
 import { useFetchRoutes } from './redux/api';
@@ -42,7 +42,9 @@ const App = () => {
                         {leagues
                             && (<div className="content">
                                 <Switch>
-                                    <Route exact path="/football-rankings" component={Home} />
+                                    <Route exact path="/football-rankings" >
+                                        <Home leagues={leagues} />
+                                    </Route>
                                     <Route path="/football-rankings/leagues"/>
                                     {leagues.map((league: League, index) => (
                                         <Route exact path={`/football-rankings/${league.slug}/:id`} key={index}>
@@ -58,7 +60,7 @@ const App = () => {
                                 Your Favourite Leagues
                             </h1>
                             <div className="league-grid">
-                                <LeagueGrid leagues={leagues.filter((v) => {
+                                <LeagueList leagues={leagues.filter((v) => {
                                     return favouriteLeagueIds.findIndex(id => id === v.id) !== -1;
                                 })}/>
                             </div>
@@ -68,7 +70,7 @@ const App = () => {
                     <h1 style={{ display: 'flex', justifyContent: 'center', fontSize: 'xxx-large', margin: '20px' }}>
                         All Leagues
                     </h1>
-                    <div className="league-grid">{leagues && <LeagueGrid leagues={leagues}/>}</div>
+                    <div className="league-grid" id="league-grid">{leagues && <LeagueList leagues={leagues}/>}</div>
                     <Footer />
                 </div>
             </Provider>

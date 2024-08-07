@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <nav className="navbar">
             <h1>
-                <Link to="/football-rankings/" style={{ textDecoration: 'none', color: '#702a83', fontWeight: 100 }}>
+                <Link to="/football-rankings/" style={{ textDecoration: 'none', color: '#00504d', fontWeight: 900 }}>
                     football rankings
                 </Link>
             </h1>
@@ -22,8 +22,21 @@ const Header = () => {
                 <Link to={`/football-rankings/uefa.europa.conf/${currentSeason}`}>
                     <img className="navbar-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/20296.png" alt="img" /></Link>
                 <hr style={{ marginRight: '32px', marginLeft: '16px', height: '64px' }}/>
-                <Link to={'/football-rankings/leagues'}>
-                    <h3 style={{ color: '#333' }}>All Leagues</h3></Link>
+                <h3
+                    style={{ color: '#333', fontWeight: 'normal', cursor: 'pointer' }}
+                    onClick={() => {
+                        const allLeaguesElem = document.getElementById('league-grid');
+
+                        if (allLeaguesElem) {
+                            allLeaguesElem.scrollIntoView({ behavior: 'smooth' });
+                        } else {
+                            window.location.href = '/football-rankings';
+                            document.getElementById('league-grid')?.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }}
+                >
+                    All Leagues
+                </h3>
             </div>
         </nav>
     );

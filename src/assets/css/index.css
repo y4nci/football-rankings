@@ -17,7 +17,7 @@ a {
 .App {
   justify-content: center;
   align-items: center;
-  color: #3d185a;
+  color: #00504d;
 }
 
 .league-grid {
@@ -43,20 +43,29 @@ a {
 }
 
 .league-button:hover {
-  color: #702a83;
+  color: #00504d;
 }
 
 .league-item {
-  min-height: 200px;
+  height: 80px;
   min-width: 100px;
   cursor: pointer;
   display: flex;
-    flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .league-logo {
-  height: 50%;
-  width: 50%;
+  height: 80px;
+  width: 80px;
+  margin: unset;
+}
+
+.league-list-name {
+  font-size: larger;
+  margin: unset;
+  color:#00504d;
 }
 
 .grid {
@@ -64,14 +73,34 @@ a {
   align-items: center;
 }
 
-.home-content {
+.world-map {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 90vw;
+  height: calc(100vh - 150px);
   background-color: var(--bgColour);
+}
+
+.map-container {
+  height: calc(100vh - 150px);
+  width: calc(100% - 600px);
+  display: flex;
+  flex-direction: column;
+}
+
+.selected-coordinate-league-list {
+  width: 400px;
+  margin-top: 50px;
+  height: calc(100vh - 150px);
+  overflow-y: auto;
+}
+
+.selected-coordinate-league-list  h3 {
+  color: #00504d;
+  margin: 10px 0;
+  padding: 0;
 }
 
 .home-background {
@@ -84,7 +113,7 @@ a {
 }
 
 .home-title {
-  color: #702a83;
+  color: #00504d;
   font-size: 4.5rem;
 }
 
@@ -97,7 +126,7 @@ a {
 }
 
 .home-links:hover {
-  color: #702a83;
+  color: #00504d;
 }
 
 .links {
@@ -116,6 +145,7 @@ a {
   border-bottom: 2px solid #f2f2f2;
   justify-content: space-evenly;
   background: white;
+  height: 110px;
 }
 
 .navbar-logo {
@@ -124,12 +154,12 @@ a {
 }
 
 .navbar h1 {
-  color: #702a83;
+  color: #00504d;
   font-size: 4.5rem;
 }
 
 .navbar a:hover {
-  color: #702a83;
+  color: #00504d;
 }
 
 .footer {
@@ -167,7 +197,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #702a83;
+  color: #00504d;
   margin: 20px 5px;
   font-size: 2.5rem;
 }
@@ -176,7 +206,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #702a83;
+  color: #00504d;
   font-size: 1.5rem;
   margin: 20px 0;
 }
@@ -188,7 +218,7 @@ a {
 
 .season-names {
   border-top: 1px solid #f2f2f2;
-  color: #702a83;
+  color: #00504d;
   display: flex;
   margin-left: 10px;
   align-items: center;
@@ -200,13 +230,13 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #3d185a;
+  color: #00504d;
   margin-bottom: 30px;
   margin-top: 5px;
 }
 
 .season-navigator:hover {
-  color: #702a83;
+  color: #00504d;
 }
 
 .invalid-season {

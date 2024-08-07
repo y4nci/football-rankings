@@ -47,7 +47,7 @@ const StandingsPage = (props:{ leagueName:string, leagueId: string }) => {
                             setProperty(FAVOURITES_STORAGE_KEY, 'ids', favourites);
                             window.location.reload();
                         }
-                        }><Favorite style={{ margin: '0 5px', color: '#702a83' }}/></Button>
+                        }><Favorite style={{ margin: '0 5px', color: '#00504d' }}/></Button>
                         : <Button variant="text" color="success" onClick={() => {
                             let favourites = getProperty(FAVOURITES_STORAGE_KEY, 'ids');
                             if (favourites) favourites.push(leagueId);
@@ -55,7 +55,7 @@ const StandingsPage = (props:{ leagueName:string, leagueId: string }) => {
                             setProperty(FAVOURITES_STORAGE_KEY, 'ids', favourites);
                             window.location.reload();
                         }
-                        }><FavoriteBorder style={{ margin: '0 5px', color: '#702a83' }}/></Button>
+                        }><FavoriteBorder style={{ margin: '0 5px', color: '#00504d' }}/></Button>
                 }
             </div>
 
