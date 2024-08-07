@@ -1,25 +1,19 @@
 {
   "files": {
-    "main.css": "/mackolik/static/css/main.736a338b.css",
-    "main.js": "/mackolik/static/js/main.c129a224.js",
-    "static/js/787.743b58c3.chunk.js": "/mackolik/static/js/787.743b58c3.chunk.js",
-    "static/media/home-background.png": "/mackolik/static/media/home-background.373d7b0c92ea5fb6de49.png",
-    "static/media/Saira-Medium.ttf": "/mackolik/static/media/Saira-Medium.67a0acedf3eb6fa55679.ttf",
-    "static/media/Saira-Regular.ttf": "/mackolik/static/media/Saira-Regular.17aa34c01b8fe1b35d2b.ttf",
-    "static/media/Saira-Thin.ttf": "/mackolik/static/media/Saira-Thin.27d1b76f823ef831c528.ttf",
-    "static/media/Saira-SemiBold.ttf": "/mackolik/static/media/Saira-SemiBold.225ab9da1d028b5cc66a.ttf",
-    "static/media/Saira-ExtraBold.ttf": "/mackolik/static/media/Saira-ExtraBold.cb66fe012ebfa50c8663.ttf",
-    "static/media/Saira-ExtraLight.ttf": "/mackolik/static/media/Saira-ExtraLight.0f7e820c320aa473833e.ttf",
-    "static/media/Saira-Light.ttf": "/mackolik/static/media/Saira-Light.530b07449b922344ae8f.ttf",
-    "static/media/Saira-Bold.ttf": "/mackolik/static/media/Saira-Bold.230ff8251599fd06ef99.ttf",
-    "static/media/Saira-Black.ttf": "/mackolik/static/media/Saira-Black.7227e0e7c0b85ac1726f.ttf",
-    "index.html": "/mackolik/index.html",
-    "main.736a338b.css.map": "/mackolik/static/css/main.736a338b.css.map",
-    "main.c129a224.js.map": "/mackolik/static/js/main.c129a224.js.map",
-    "787.743b58c3.chunk.js.map": "/mackolik/static/js/787.743b58c3.chunk.js.map"
+    "main.css": "/football-rankings/static/css/main.caecfd8a.css",
+    "main.js": "/football-rankings/static/js/main.2d37e84b.js",
+    "static/js/787.38f0bc0a.chunk.js": "/football-rankings/static/js/787.38f0bc0a.chunk.js",
+    "static/media/NeueMontreal-Bold.otf": "/football-rankings/static/media/NeueMontreal-Bold.0836656dccdad13f5c96.otf",
+    "static/media/NeueMontreal-Medium.otf": "/football-rankings/static/media/NeueMontreal-Medium.15b1070b8dac57958acf.otf",
+    "static/media/NeueMontreal-Light.otf": "/football-rankings/static/media/NeueMontreal-Light.b94da60cc7760663345c.otf",
+    "static/media/NeueMontreal-Regular.otf": "/football-rankings/static/media/NeueMontreal-Regular.140bfb4a71fe08805d92.otf",
+    "index.html": "/football-rankings/index.html",
+    "main.caecfd8a.css.map": "/football-rankings/static/css/main.caecfd8a.css.map",
+    "main.2d37e84b.js.map": "/football-rankings/static/js/main.2d37e84b.js.map",
+    "787.38f0bc0a.chunk.js.map": "/football-rankings/static/js/787.38f0bc0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.736a338b.css",
-    "static/js/main.c129a224.js"
+    "static/css/main.caecfd8a.css",
+    "static/js/main.2d37e84b.js"
   ]
 }
